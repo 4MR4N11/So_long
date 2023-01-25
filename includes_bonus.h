@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   includes_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-amra <kel-amra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amrani <amrani@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:15:29 by kel-amra          #+#    #+#             */
-/*   Updated: 2022/03/13 19:39:39 by kel-amra         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:43:10 by amrani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 # define INCLUDES_BONUS_H
 
 # include <fcntl.h>
-# include <mlx.h>
+# include "mlx_linux/mlx.h"
 # include "get_next_line/get_next_line.h"
 # include "ft_printf/ft_printf.h"
 
-# define UP 13
-# define DOWN 1
-# define LEFT 0
-# define RIGHT 2
-# define ESC 53
+# define UP 119
+# define DOWN 115
+# define LEFT 97
+# define RIGHT 100
+# define ESC 65307
 
 typedef struct s_data
 {

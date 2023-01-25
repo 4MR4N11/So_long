@@ -38,8 +38,6 @@ OBJECT = $(SRCS:.c=.o)
 
 OBJECTB = $(SRCSB:.c=.o)
 
-FLAGS =  -Wall -Wextra -Werror
-
 all : $(NAME)
 
 $(GET_NEXT_LINE) : mget_next_line
@@ -47,10 +45,10 @@ $(GET_NEXT_LINE) : mget_next_line
 $(PRINTF) : mprintf
 
 $(NAME) : $(GET_NEXT_LINE) $(PRINTF) $(OBJECT) $(HEADER)
-			gcc $(FLAGS) $(GET_NEXT_LINE) $(PRINTF) $(OBJECT) -lmlx -framework OpenGl -framework Appkit  -o $(NAME)
+			gcc $(OBJECT) $(GET_NEXT_LINE) $(PRINTF) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o  $(NAME)
 
 bonus :	$(GET_NEXT_LINE) $(PRINTF) $(OBJECTB) $(HEADERB)
-			gcc $(FLAGS) $(GET_NEXT_LINE) $(PRINTF) $(OBJECTB) -lmlx -framework OpenGl -framework Appkit  -o $(NAMEB)
+			gcc $(OBJECTB) $(GET_NEXT_LINE) $(PRINTF) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAMEB)
 
 mget_next_line :
 			make -C get_next_line/
@@ -59,7 +57,7 @@ mprintf :
 			make -C ft_printf/
 
 %.o : %.c
-			gcc $(FLAGS) -c $<
+			gcc -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 clean :
 			make clean -C get_next_line/
