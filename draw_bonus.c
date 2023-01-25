@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-amra <kel-amra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amrani <amrani@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 19:14:26 by kel-amra          #+#    #+#             */
-/*   Updated: 2022/03/13 15:28:20 by kel-amra         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:46:39 by amrani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	draw(t_data *tmp)
 	drawer(tmp);
 	mlx_put_image_to_window(tmp->mlx, tmp->win, tmp->img, 0, 0);
 	mlx_string_put(tmp->mlx, tmp->win, 10, 10, 0x002C3E50, ft_itoa(tmp->mv));
-	mlx_hook(tmp->win, 2, 0, get_event, tmp);
+	mlx_hook(tmp->win, 2, 1L<<0, get_event, tmp);
 	mlx_hook(tmp->win, 17, 0, close_window, tmp);
 	mlx_loop(tmp->mlx);
 }
